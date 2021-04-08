@@ -1,0 +1,27 @@
+Sorting a string  in the following manner:
+
+All sorted lowercase letters are ahead of uppercase letters.
+All sorted uppercase letters are ahead of digits.
+All sorted odd digits are ahead of sorted even digits.
+
+CODE:
+
+c=input()
+l=[]
+u=[]
+e=[]
+o=[]
+for i in c:
+    if(i.islower()==True):
+        l.append(i)
+    elif(i.isupper()==True):
+        u.append(i)
+    else:
+        d=int(i)
+        if(d%2==0):
+            e.append(i)
+        else:
+            o.append(i)
+l=list(sorted(l)+sorted(u)+sorted(o)+sorted(e))
+j=''.join([str(k) for k in l])
+print(j)
